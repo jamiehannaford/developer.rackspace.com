@@ -1,5 +1,11 @@
 .. code-block:: csharp
 
+  var identity = new CloudIdentity { Username = "{username}", APIKey = "{apiKey}" };
+  var provider = new CloudIdentityProvider(identity);
+
+  UserCredential credential = provider.ResetApiKey("{userId}");
+  string newApiKey = credential.APIKey;
+
 .. code-block:: go
 
   newKey, err := users.ResetAPIKey(client, "{userId}").Extract()

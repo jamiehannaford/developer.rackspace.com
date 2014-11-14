@@ -1,5 +1,11 @@
 .. code-block:: csharp
 
+  var identity = new CloudIdentity { Username = "{username}", APIKey = "{apiKey}" };
+  var provider = new CloudIdentityProvider(identity);
+
+  User user = provider.GetUserByName("{username}", null);
+  provider.AddRoleToUser(user.Id, "{roleId}", null);
+
 .. code-block:: go
 
   err := roles.AddUserRole(client, "{userId}", "{roleId}").ExtractErr()

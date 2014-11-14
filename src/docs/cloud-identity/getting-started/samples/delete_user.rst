@@ -1,5 +1,10 @@
 .. code-block:: csharp
 
+  var identity = new CloudIdentity { Username = "{username}", APIKey = "{apiKey}" };
+  var provider = new CloudIdentityProvider(identity);
+
+  provider.DeleteUser("{userId}", null);
+
 .. code-block:: go
 
   err := users.Delete(client, "{userId}").ExtractErr()

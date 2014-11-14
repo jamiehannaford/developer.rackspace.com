@@ -1,5 +1,11 @@
 .. code-block:: csharp
 
+  var identity = new CloudIdentity { Username = "{username}", APIKey = "{apiKey}" };
+  var provider = new CloudIdentityProvider(identity);
+
+  User user = provider.GetUserByName("{username}", null);
+  provider.DeleteRoleFromUser(user.Id, "{roleId}", null);
+
 .. code-block:: go
 
   err := roles.DeleteUserRole(client, "{userId}", "{roleId}").ExtractErr()

@@ -1,5 +1,12 @@
 .. code-block:: csharp
 
+  var identity = new CloudIdentity { Username = "{username}", APIKey = "{apiKey}" };
+  var provider = new CloudIdentityProvider(identity);
+
+  IEnumerable<User> users = provider.ListUsers(null);
+  foreach (var user in users)
+    Console.WriteLine("{0}: {1}", user.Id, user.Username);
+
 .. code-block:: go
 
   err := users.List(client).EachPage(func(page pagination.Page) (bool, error) {

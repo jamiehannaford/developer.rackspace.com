@@ -1,5 +1,12 @@
 .. code-block:: csharp
 
+  var identity = new CloudIdentity();
+  var provider = new CloudIdentityProvider(identity);
+
+  NewUser user = new NewUser("{username}", "{email}", enabled: true);
+  user = provider.AddUser(user, null);
+  string password = user.Password;
+
 .. code-block:: go
 
   opts := users.CreateOpts{

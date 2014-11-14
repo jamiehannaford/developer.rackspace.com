@@ -1,5 +1,8 @@
 .. code-block:: csharp
 
+  var identity = new CloudIdentity { Username = "{username}", APIKey = "{apiKey}" };
+  var provider = new CloudIdentityProvider(identity);
+
 .. code-block:: go
 
   opts := gophercloud.AuthOptions{

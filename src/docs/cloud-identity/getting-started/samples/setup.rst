@@ -1,5 +1,11 @@
 .. code-block:: csharp
 
+  using net.openstack.Core.Domain;
+  using net.openstack.Providers.Rackspace;
+
+  var identity = new CloudIdentity { Username = "{username}", APIKey = "{apiKey}" };
+  var provider = new CloudIdentityProvider(identity);
+
 .. code-block:: go
 
   import (

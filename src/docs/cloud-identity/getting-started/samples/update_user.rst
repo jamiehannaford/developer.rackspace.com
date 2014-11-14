@@ -1,5 +1,19 @@
 .. code-block:: csharp
 
+  var identity = new CloudIdentity { Username = "{username}", APIKey = "{apiKey}" };
+  var provider = new CloudIdentityProvider(identity);
+
+  User user;
+
+  // retrieve user by name
+  user = provider.GetUserByName("{username}", null);
+
+  // or retrieve by ID
+  user = provider.GetUser("{userId}", null);
+
+  user.Username = "{newUsername}";
+  provider.UpdateUser(user, null);
+
 .. code-block:: go
 
   opts := users.UpdateOpts{Username: "{newUsername}"}
